@@ -86,3 +86,4 @@ index=cloudtrail userIdentity.arn="[compromised-arn]" earliest=-7d | table _time
 * **Update IAM IR Runbook** with lessons learned.
 * **Implement prevention:** Add secret scanning, schedule IAM Access Analyzer, and use MFA SCPs (Service Control Policies).
 * **Conduct IAM-wide audit:** Use this incident as a trigger to review ALL identities for excessive permissions, unused accounts, and unrotated keys.
+<img width="1360" height="1600" alt="iam_incident_response_flow" src="https://github.com/user-attachments/assets/48d3e8fa-3471-497b-864e-8e8960ac9f1b" />
