@@ -24,7 +24,7 @@ No CloudTrail - attacker operates freely with no audit log of their actions.
 IAM MITRE ATT&CK; Techniques
 
 
-# T1078.004 - Valid Accounts: Cloud Accounts - use stolen credentials to authenticate.
+## T1078.004 - Valid Accounts: Cloud Accounts - use stolen credentials to authenticate.
 T1098.001 - Additional Cloud Credentials - create new access keys for persistence.
 T1136.003 - Create Cloud Account - create new IAM user as backdoor.
 T1548 - Abuse Elevation: Attach Policy to Self - attach AdministratorAccess to own account.
@@ -33,7 +33,7 @@ T1552.005 - Unsecured Credentials: Cloud Instance Metadata API - SSRF to steal E
 T1580 - Cloud Infrastructure Discovery via IAM Enumeration - ListUsers, ListRoles, GetAccountAuthorizationDetails.
 
 
-# IAM Controls to Apply (Threat Modeling Output)
+## IAM Controls to Apply (Threat Modeling Output)
 Enforce least privilege: specific actions on specific resources only. No wildcards unless justified.
 Enable MFA: root account (mandatory), all console users, all users with sensitive IAM permissions.
 Use roles not users for applications and services - no long-lived access keys in code.
