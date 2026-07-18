@@ -1,44 +1,6 @@
 ## IAM INCIDENT RESPONSE
 *Step-by-step response when an IAM identity is confirmed compromised*
 
-graph TD
-    %% Colors and Styles
-    classDef attacker fill:#ffebee,stroke:#ff0000,stroke-width:2px;
-    classDef aws fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
-    classDef monitor fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
-    classDef soc fill:#eceff1,stroke:#607d8b,stroke-width:2px;
-    classDef action fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
-    classDef auto fill:#f3e5f5,stroke:#00c853,stroke-width:2px,stroke-dasharray: 5 5;
-
-    %% Nodes
-    A[🥷 Attacker uses Stolen IAM Keys]:::attacker
-    B[☁️ AWS Cloud Infrastructure]:::aws
-    C{🔍 CloudTrail & GuardDuty}:::monitor
-    D[🚨 Splunk SIEM / SOC Team]:::soc
-    E[🛡️ Incident Response Triage]:::soc
-    
-    F[🔒 Attach QUARANTINE-DENY-ALL]:::action
-    G[❌ Deactivate Access Keys]:::action
-    
-    H[⚡ EventBridge Rule Trigger]:::auto
-    I[🤖 Lambda Auto-Deactivates Keys]:::auto
-
-    %% Flow
-    A -->|Malicious API Calls| B
-    B -->|Logs Activity| C
-    
-    %% Manual Flow
-    C -->|Sends Alerts| D
-    D -->|Investigates| E
-    E -->|Manual Containment| F
-    E -->|Manual Containment| G
-    
-    %% Automated Flow
-    C -.->|High Severity Finding| H
-    H -.->|Triggers Automation| I
-
-    
-
 ## 🛠️ 4.1 Preparation - Write This Before an Incident Happens
 * **Pre-create QUARANTINE-DENY-ALL inline policy:** `Effect:Deny, Action:*, Resource:*`. Attach to any identity instantly during IR to block all API calls.
 * **Document Authority:** Document exactly who has the authority to deactivate credentials during an incident.
