@@ -1,3 +1,6 @@
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Splunk](https://img.shields.io/badge/splunk-%23000000.svg?style=for-the-badge&logo=splunk&logoColor=white)
+![CyberSecurity](https://img.shields.io/badge/Security-Blue_Team-blue?style=for-the-badge)
 # 🔐 AWS IAM Security Handbook
 
 This repository is a comprehensive, practical guide designed for Cloud Security professionals, SOC Analysts, and anyone looking to secure AWS Identity and Access Management (IAM) infrastructure. It breaks down complex IAM vulnerabilities, detection mechanisms, and step-by-step incident response procedures.
