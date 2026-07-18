@@ -25,21 +25,37 @@ IAM MITRE ATT&CK; Techniques
 
 
 ## T1078.004 - Valid Accounts: Cloud Accounts - use stolen credentials to authenticate.
+
 T1098.001 - Additional Cloud Credentials - create new access keys for persistence.
+
 T1136.003 - Create Cloud Account - create new IAM user as backdoor.
+
 T1548 - Abuse Elevation: Attach Policy to Self - attach AdministratorAccess to own account.
+
 T1550.001 - Use Alternate Auth: Application Access Token - steal and reuse STS temp credentials.
+
 T1552.005 - Unsecured Credentials: Cloud Instance Metadata API - SSRF to steal EC2 instance role creds.
+
 T1580 - Cloud Infrastructure Discovery via IAM Enumeration - ListUsers, ListRoles, GetAccountAuthorizationDetails.
 
 
 ## IAM Controls to Apply (Threat Modeling Output)
+
 Enforce least privilege: specific actions on specific resources only. No wildcards unless justified.
+
 Enable MFA: root account (mandatory), all console users, all users with sensitive IAM permissions.
+
 Use roles not users for applications and services - no long-lived access keys in code.
+
 Mandatory access key rotation: Config rule access-keys-rotated, alert on keys older than 90 days.
+
 Enable IAM Access Analyzer in every account and region.
+
 Use permission boundaries on all IAM users created by developers or automation.
+
 SCP at Organizations: deny disabling CloudTrail, deny root access keys, deny IAM users without MFA.
+
 Strong password policy: minimum 14 characters, complexity required, 90-day expiry, no reuse of last 24.
+
 Config rule iam-root-access-key-check: alert if root has active access keys.
+
