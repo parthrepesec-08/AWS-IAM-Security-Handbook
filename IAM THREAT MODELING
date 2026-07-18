@@ -1,4 +1,4 @@
-##IAM Attack Surfaces - What Can Go Wrong
+## IAM Attack Surfaces - What Can Go Wrong
 
 Overprivileged IAM identities - user or role with AdministratorAccess or wildcard (*) permissions. Most common IAM vulnerability. If
 compromised, attacker has full account control.
